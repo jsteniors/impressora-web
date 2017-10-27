@@ -1,0 +1,79 @@
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cat in categorias" style="cursor: pointer;" ng-dblclick="selectCategoria(cat)">
+                <td>{{::cat.id}}</td>
+                <td>{{::(cat.nome||'Sem nome')}}</td>
+                <td>
+                    <a class="btn btn-light" ng-click="selectEdit(cat)"  data-toggle="tooltip" data-placement="top" title="Editar">
+                        &#x270E;
+                    </a>
+                    <a class="btn btn-light" ng-click="confirmDelete(cat)" data-toggle="tooltip" data-placement="top" title="Excluir">
+                        &#x1F5D1;
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="container my-sm-5">
+    <div class="row">
+        <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#exampleModal" onclick="$('#exampleModal').modal('show');">
+            Adicionar categoria
+        </button>
+        <button class="btn btn-outline-secondary mx-sm-2 col-lg-1" onclick="window.history.back()">Voltar</button>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Criar categoria de impressora</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control" type="text" id="nome" ng-model="categoria.nome">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="salvar(categoria)">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel1">Remover categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja ecluir item selecionado?
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success mx-sm-3" ng-click="delete(deletCategoria)">Confirmar</button>
+                <button class="btn btn-danger mx-sm-3" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+data:[{
+    nome: 'hp',
+    imagem: 'img/hp-logo.png',
+    tipos: [{
+      nome: 'Jato de tinta',
+      categorias: [
+
+      ]
+    },
+      {
+        nome: 'Laser',
+        categorias: [{
+          nome: 'Impressora Laser HP Mono',
+          impressoras: [
+            {
+              id: 'cp456',
+              modelo: 'Impressora laser color CP1215 - HP',
+              imagem: 'impressora-hp-laser-mono.png',
+              cartuchos: [
+                {
+                  modelo: 'Cartucho toner HP laserjet preto CB540AB HP CK 1 UN',
+                  imagem: 'cartucho-hp-laser.png'
+                }
+              ]
+            }
+          ]
+        },{
+          nome: 'Impressoras Laser HP Color',
+          impressoras: [
+            {
+              id: 'cp123',
+              modelo: 'Impressora HP LaserJet CP1025 Colorida',
+              imagem: 'impressora-hp-laser-color.png'
+            }
+          ]
+        }]
+      }
+    ]
+  },{
+  nome: 'epson',
+  imagem: 'img/epson-logo.png'
+},{
+  nome: 'canon',
+  imagem: 'img/canon-logo.png'
+},{
+  nome: 'samsung',
+  imagem: 'img/samsung-logo.png'
+}]

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="adminApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina de controle</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora|Raleway" rel="stylesheet">
+</head>
+
+<body>
+<div class="conteudo" ng-if="isUserLogged">
+    <section class="section-menu" ng-controller="menuController">
+        <div class="dropdown-menu menu-static">
+            <a class="dropdown-item d-inline-flex" data-toggle="collapse" data-target="#collapseOption" aria-expanded="false" aria-controls="collapseOption">
+                <div class="user-icon">
+
+                </div>
+                <span>Username</span>
+
+            </a>
+            <div class="collapse" id="collapseOption">
+                <div class="card card-body">
+                    <button class="btn btn-primary" ng-click="logout()">Sair</button>
+                </div>
+            </div>
+            <!--{{home}}/admin/#!/{{::marca.nome}}-->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item d-inline-flex" href="#!/marca/{{::marca.nome}}" ng-repeat="marca in marcas">
+                <div class="user-icon" style="background-image: url('img/{{::marca.imagem}}')"></div>
+                <span>{{::marca.nome|stringFilter}}</span>
+            </a>
+        </div>
+    </section>
+    <aside class="cointainer aside-conteudo">
+        <nav class="navbar navbar-inverse bg-primary nav-all">
+            <h1 class="display-4 ">
+                {{$route.current.scope.nomeView}}
+            </h1>
+        </nav>
+        <section>
+            <div class="content-view" ng-view>
+
+            </div>
+
+        </section>
+
+    </aside>
+</div>
+<div ng-if="!isUserLogged">
+    <div ng-view>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="impressoras">
+    <head>
+        <meta charset="UTF-8">
+        <title>Porjeto Impressora</title>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="conteudo">
+            <nav class="navbar navbar-light bg-light rounded">
+                <a class="navbar-brand">
+                    <img src="img/hp-logo.png" width="90" class="d-inline-block"> <h3 class="d-inline-block txt-descript">Busca de cartuchos</h3>
+                </a>
+            </nav>
+            <div class="central">
+                <h5 class="txt-descript paragrafo">Selecione o fabricante de sua impressora para iniciar sua pesquisa</h5>
+                <div class="marcas" ng-view>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

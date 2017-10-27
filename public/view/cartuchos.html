@@ -1,0 +1,37 @@
+<div class="apr">
+    <img src="img/{{marca.imagem}}" width="100"/>
+    <button class="btn btn-outline-secondary" ng-click="selectMarcas()"> Trocar de marca</button>
+    <h5 class="my-sm-3 text-info">Pesquise pelo modelo</h5>
+</div>
+<div class="form-inline">
+    <input type="text" ng-model="filtro" class="form-control mx-sm-2" style="width: 50%" placeholder="Digite o modelo do cartucho">
+    <button class="btn btn-warning"><span class="glyphicon glyphicon-search"></span>&#x1f50d;Buscar</button>
+</div>
+<h5 class="text-info my-sm-3"><mark>ou</mark> clique no tipo da sua impressora</h5>
+<div class="container">
+    <div class="row">
+        <button class="btn btn-info btn-lg col mx-sm-1" ng-repeat="tipo in marca.tipos">{{tipo.nome}}</button>
+        <!--<button class="btn btn-info btn-lg col  mx-sm-2">Lazer</button>-->
+    </div>
+</div>
+<h5 class="text-secondary my-sm-3">Você selecionou: </h5>
+<div class="impressora-sel text-center rounded" ng-click="scrollTo('cartuchosImpressora')">
+    <img src="img/{{impressora.imagem}}" width="150" alt="Impressora selecionada" class="d-inline-block" />
+    <div class="sel-desc d-inline-block text-center">
+        <h3 class="txt-nodc">{{impressora.modelo}}</h3>
+        <h6 class="text-secondary">Confira abaixo os cartuchos desta impressora</h6>
+        &#9661;
+    </div>
+</div>
+<div class="cartuchos-cards" id="cartuchosImpressora" ng-move="move">
+    <div class="row">
+        <div class="card card-cartucho container text-center" ng-repeat="ct in impressora.cartuchos|filter:{modelo:filtro}">
+            <p class="card-text">{{ct.nome}}</p>
+            <img src="img/{{ct.imagem}}" class="card-img-middle" alt="Cartucho selecionado" width="250"/>
+            <button class="btn btn-primary">&#x1F6D2; Comprar</button>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-secondary my-sm-5" ng-click="selectMarcas()">< Voltar</button>
+<a class="clearfix"></a>
