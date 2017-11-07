@@ -55,7 +55,7 @@ app.use('/robot', function (req, res) {
   msg.push({type:'message', content: '<img src="http://lorempixel.com/400/200">'});
   //msg.push({type:'message', content:"Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker."});
   //msg.push({type:'message', content:"Vse telo suhijm mi, sxuflad kasxtanju tut ku. Oni mi velju pridij vilkas, bez da maluo slovio, vi voz kofe sxuflad ucxitelica. Vo takak robenie gaz. Ne tut robijm iskajm dirkas. Dev li jazikaf ocxviduo, dva to znal miakju. Nocx hrebet kontainer tut da, es dom blizuo verijm zvestis."});
-  msg.push({type:'message', content:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"});
+  msg.push({type:'message', content:"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit <a class='link' href='http://google.com'>Teste de link</a>"});
   msg.push({type:'render', location:"http://google.com"});
   msg.push({type:'linked', buttonText:"Clique aqui", link:'http://google.com'});
   msg.push({type:'form'});
