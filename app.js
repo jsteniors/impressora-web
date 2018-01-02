@@ -1,20 +1,18 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var fs = require('fs');
-var mysql =  require('mysql');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var connection = require('./db/connection');
+//var connection = require('./db/connection');
 
-var TiposDAO =  require('./db/tiposDAO');
+//var TiposDAO =  require('./db/tiposDAO');
 
-var marcasService = require('./services/marcasService');
+//var marcasService = require('./services/marcasService');
 
-app.use('/',marcasService);
+//app.use('/',marcasService);
 
 var port = process.env.PORT || 3000;
 
@@ -28,10 +26,10 @@ app.use('/teste',(req, res)=>res.json({message: 'teste'}));
 
 
 
-app.use('/tipos',function(req, res){
+/*app.use('/tipos',function(req, res){
   var dao = new TiposDAO(connection);
   var dados = dao.getTipos(res);
-});
+});*/
 
 
 app.use('/robot', function (req, res) {
