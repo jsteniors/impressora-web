@@ -513,8 +513,9 @@ marcas = [
     nome: 'samsung',
     imagem: 'img/samsung-logo.png'
 }];
-var host = 'http://localhost:8080/impressora/';
-var basicHost = 'http://localhost:8080/';
+
+var basicHost = 'https://impressora-java.herokuapp.com/impressora/';
+var host = 'https://impressora-java.herokuapp.com/impressora/';
 
 angular.module('impressoras', ['ngRoute','ngAnimate']);
 
